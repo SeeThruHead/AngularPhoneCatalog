@@ -11,5 +11,5 @@
  */
 angular.module('angularPhoneCatalogueApp')
   .controller('MainCtrl', function ($scope, phones) {
-    $scope.phones = phones.getData();
+    $scope.phones = phones.getPhones.query();
   });

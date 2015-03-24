@@ -11,21 +11,11 @@
  */
 
 angular.module('angularPhoneCatalogueApp')
-  .factory('phones', function ($http) {
-    var service = {},
-      phoneData;
+  .factory('phones', function ($resource) {
+    var service = {};
 
-    service.getData = function() {
-      if (phoneData) {
-        return phoneData;
-      }
-      $http.get('/phonecat.json')
-        .then(function(response) {
-          phoneData = response.data;
-          console.log(phoneData);
-          return phoneData;
-        });
-    };
-    console.log(service);
+    service.getPhones = $resource('/phonecat.json', {}, {
+      query: {method: 'GET', isArray: true}
+    });
     return service;
   });

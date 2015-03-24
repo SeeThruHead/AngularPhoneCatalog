@@ -1,1 +1,7 @@
-{{ phones }}
+<h1>Details:</h1>
+<div class="col-md-4">
+  <img ng-src="{{ '/images/' + phone.image }}" alt="{{ phone.name }}">
+</div>
+<h3>{{ phone.name }}</h3>
+<p>Price: {{ phone.price }}</p>
+<p>{{ phone.detail }}</p>

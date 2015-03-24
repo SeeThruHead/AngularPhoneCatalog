@@ -29,7 +29,7 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/details', {
+      .when('/details/:id', {
         templateUrl: 'views/details.html',
         controller: 'DetailsCtrl'
       })
