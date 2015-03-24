@@ -1,3 +1,5 @@
+/*jslint browser: true*/
+/*global angular */
 'use strict';
 
 /**
@@ -26,6 +28,10 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/details', {
+        templateUrl: 'views/details.html',
+        controller: 'DetailsCtrl'
       })
       .otherwise({
         redirectTo: '/'

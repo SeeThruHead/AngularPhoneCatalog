@@ -1,3 +1,4 @@
+
 /*jslint browser: true*/
 /*global angular */
 'use strict';
@@ -10,6 +11,6 @@
  * Controller of the angularPhoneCatalogueApp
  */
 angular.module('angularPhoneCatalogueApp')
-  .controller('MainCtrl', function ($scope, phones) {
+  .controller('DetailsCtrl', function ($scope, phones) {
     $scope.phones = phones.getData();
   });
