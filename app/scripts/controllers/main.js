@@ -11,5 +11,7 @@
  */
 angular.module('angularPhoneCatalogueApp')
   .controller('MainCtrl', function ($scope, phones) {
+    $scope.sortOptions = ['price', 'name'];
+    $scope.sortBy = 'price';
     $scope.phones = phones.getPhones.query();
   });
