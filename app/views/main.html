@@ -5,7 +5,7 @@
 <div class="col-md-4" ng-repeat="phone in phones | orderBy:sortBy">
   <a href="#/details/{{phone.id}}">
     <div class="col-md-4">
-      <img ng-src="{{ '/images/' + phone.image }}" alt="{{ phone.name }}">
+      <img ng-src="{{ phone.imageUrl }}" alt="{{ phone.name }}">
     </div>
     <h3>{{ phone.name }}</h3>
     <p>Price: {{ phone.price }}</p>

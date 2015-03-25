@@ -15,7 +15,10 @@ angular.module('angularPhoneCatalogueApp')
     var service = {};
 
     service.getPhones = $resource('/phonecat.json', {}, {
-      query: {method: 'GET', isArray: true}
+      query: {
+        method: 'GET',
+        isArray: true,
+      }
     });
     return service;
   });

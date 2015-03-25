@@ -1,13 +1,12 @@
-
 /*jslint browser: true*/
 /*global angular */
 'use strict';
 
 /**
  * @ngdoc function
- * @name angularPhoneCatalogueApp.controller:MainCtrl
+ * @name angularPhoneCatalogueApp.controller:DetailsCtrl
  * @description
- * # MainCtrl
+ * # DetailsCtrl
  * Controller of the angularPhoneCatalogueApp
  */
 angular.module('angularPhoneCatalogueApp')
@@ -22,6 +21,7 @@ angular.module('angularPhoneCatalogueApp')
     $scope.phones = phones.getPhones.query();
     $scope.phones.$promise.then(function (result) {
         $scope.phone = getId(result, $routeParams.id);
+        $scope.phone.imageUrl= '/images/' + $scope.phone.image;
     });
 
   });

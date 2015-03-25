@@ -14,4 +14,11 @@ angular.module('angularPhoneCatalogueApp')
     $scope.sortOptions = ['price', 'name'];
     $scope.sortBy = 'price';
     $scope.phones = phones.getPhones.query();
+    
+    $scope.phones.$promise.then(function(result) {
+      return result.map(function(phone) {
+        phone.imageUrl = '/images/' + phone.image;
+        return phone;
+      });
+    });
   });
