@@ -1,9 +1,12 @@
-<label class="col-md-12" ng-repeat="choice in sortOptions">
-  <input ng-model="$parent.sortBy" class="" type="radio" name="sortBy" value="{{choice}}"/>
-  {{ choice | uppercase }}
-</label>
+<div class="row">
+  <label class="col-md-3" ng-repeat="choice in sortOptions">
+    <input ng-model="$parent.sortBy" class="" type="radio" name="sortBy" value="{{choice}}"/>
+    {{ choice | uppercase }}
+  </label>
+</div>
+<hr>
 <div class="col-md-4" ng-repeat="phone in phones | orderBy:sortBy">
-  <a href="#/details/{{phone.id}}">
+  <a ui-sref="detailState({id: phone.id})">
     <div class="col-md-4">
       <img ng-src="{{ phone.imageUrl }}" alt="{{ phone.name }}">
     </div>

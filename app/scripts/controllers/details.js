@@ -10,7 +10,7 @@
  * Controller of the angularPhoneCatalogueApp
  */
 angular.module('angularPhoneCatalogueApp')
-  .controller('DetailsCtrl', function ($scope, $routeParams, phones) {
+  .controller('DetailsCtrl', function ($scope, $stateParams, phones) {
     function getId(results, id) {
       for (var i = 0, len = results.length; i < len; i++) {
         if (results[i].id === id) {
@@ -20,7 +20,7 @@ angular.module('angularPhoneCatalogueApp')
     }
     $scope.phones = phones.getPhones.query();
     $scope.phones.$promise.then(function (result) {
-        $scope.phone = getId(result, $routeParams.id);
+        $scope.phone = getId(result, $stateParams.id);
         $scope.phone.imageUrl= '/images/' + $scope.phone.image;
     });
 

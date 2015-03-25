@@ -71,6 +71,30 @@ img {
     margin-top: 28px;
   }
 }
+.view-container {
+  position: relative;
+}
+.fade-view {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  &.ng-enter, &.ng-leave {
+    transition: all .2s ease-in-out;
+  }
+  &.ng-enter {
+    opacity: 0;
+  }
+  &.ng-enter-active {
+    opactiy: 1;
+  }
+  &.ng-leave {
+    opacity: 1;
+  }
+  &.ng-leave-active {
+    opacity: 0;
+  }
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

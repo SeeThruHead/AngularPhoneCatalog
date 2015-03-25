@@ -15,25 +15,26 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/mainState');
+    $stateProvider 
+      .state('mainState', {
+        url: '/',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
+      .state('aboutState', {
+        url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/details/:id', {
+      .state('detailState', {
+        url: '/details?id',
         templateUrl: 'views/details.html',
         controller: 'DetailsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
